@@ -1,15 +1,20 @@
-language: php
+sudo: required
 
-php:
-  - 5.6
+language: ruby
 
-before_script:
+services:
+  - docker
+
+before_install:
+  - docker-compose up
+  - docker-compose exec workspace bash
   - cp .env.travis .env
-  - mysql -e 'create database test;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
   - php artisan migrate --seed
 
 script:
+  - docker-compose up
+  - docker-compose exec workspace bash
   - vendor/bin/phpunit
