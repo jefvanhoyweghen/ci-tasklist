@@ -5,6 +5,7 @@ use App\Task;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Hash;
 
 class ExampleTest extends TestCase
 {
@@ -20,13 +21,31 @@ class ExampleTest extends TestCase
     public function test_i_can_create_an_account()
     {
         $this->visit('/register')
-            ->type('Jef Van Hoyweghen', 'name')
-            ->type('jef@vanhoyweghen.net', 'email')
+            ->type('John Doe', 'name')
+            ->type('john.doe@acme.com', 'email')
             ->type('secret', 'password')
             ->type('secret', 'password_confirmation')
             ->press('Register')
             ->seePageIs('/tasks')
-            ->seeInDatabase('users', ['email' => 'jef@vanhoyweghen.net']);
+            ->seeInDatabase('users', ['email' => 'john.doe@acme.com']);
+    }
+
+    public function test_i_cant_create_a_duplicate_account()
+    {
+        User::create([
+            'name'      => 'John Doe',
+            'email'     => 'john.doe@acme.com',
+            'password'  => Hash::make('secret')
+        ]);
+
+        $this->visit('/register')
+            ->type('John Doe', 'name')
+            ->type('john.doe@acme.com', 'email')
+            ->type('secret', 'password')
+            ->type('secret', 'password_confirmation')
+            ->press('Register')
+            ->seePageIs('/register')
+            ->see('The email has already been taken.');
     }
 
 
