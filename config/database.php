@@ -65,12 +65,25 @@ return [
             'engine'    => null,
         ],
 
-        'testing' => [
+        'travis' => [
             'driver'    => 'mysql',
             'host'      => env('DB_TEST_HOST', 'localhost'),
             'database'  => env('DB_TEST_DATABASE', 'test'),
             'username'  => env('DB_TEST_USERNAME', 'test'),
             'password'  => env('DB_TEST_PASSWORD', 'secret'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine'    => null,
+        ],
+
+        'jenkins' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_TEST_HOST', 'localhost'),
+            'database'  => env('DB_TEST_DATABASE', 'test'),
+            'username'  => env('DB_TEST_USERNAME', 'jenkins'),
+            'password'  => env('DB_TEST_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
