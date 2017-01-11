@@ -15,6 +15,5 @@ before_install:
   - php artisan migrate --seed
 
 script:
-  - docker-compose up
   - docker-compose exec workspace bash
   - vendor/bin/phpunit
