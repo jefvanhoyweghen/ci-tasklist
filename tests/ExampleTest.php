@@ -20,13 +20,13 @@ class ExampleTest extends TestCase
     public function test_i_can_create_an_account()
     {
         $this->visit('/register')
-            ->type('Taylor Otwell', 'name')
-            ->type('taylor@laravel.com', 'email')
+            ->type('Jef Van Hoyweghen', 'name')
+            ->type('jef@vanhoyweghen.net', 'email')
             ->type('secret', 'password')
             ->type('secret', 'password_confirmation')
             ->press('Register')
             ->seePageIs('/tasks')
-            ->seeInDatabase('users', ['email' => 'taylor@laravel.com']);
+            ->seeInDatabase('users', ['email' => 'jef@vanhoyweghen.net']);
     }
 
 
