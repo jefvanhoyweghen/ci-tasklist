@@ -64,7 +64,7 @@ services:
             context: ./docker/mysql
             args:
                 - MYSQL_DATABASE=testing
-                - MYSQL_USER=root
+                - MYSQL_USER=jenkins
                 - MYSQL_PASSWORD=secret
                 - MYSQL_ROOT_PASSWORD=root
         volumes:
