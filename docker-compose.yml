@@ -70,7 +70,7 @@ services:
         volumes:
             - ./logs/apache2:/var/log/apache2
         ports:
-            - "8080:80"
+            - "8000:80"
             - "4430:443"
         links:
             - php-fpm
