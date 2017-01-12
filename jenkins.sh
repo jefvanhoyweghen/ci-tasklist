@@ -1,3 +1,5 @@
+pwd
+echo $JOB_NAME
 cd $JOB_NAME
 rm .env
 cp /.env.jenkins /.env
