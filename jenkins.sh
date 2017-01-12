@@ -1,3 +1,4 @@
+cd $JOB_NAME
 rm .env
 cp /.env.jenkins /.env
 cp phpunit.xml.jenkins phpunit.xml
