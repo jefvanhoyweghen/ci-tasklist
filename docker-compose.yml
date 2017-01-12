@@ -70,8 +70,8 @@ services:
         volumes:
             - ./logs/apache2:/var/log/apache2
         ports:
-            - "80:80"
-            - "443:443"
+            - "8080:80"
+            - "4430:443"
         links:
             - php-fpm
 
@@ -86,7 +86,7 @@ services:
         volumes:
             - mysql:/var/lib/mysql
         ports:
-            - "3306:3306"
+            - "33060:3306"
 
 volumes:
     mysql:
