@@ -83,7 +83,7 @@ return [
             'host'      => env('DB_TEST_HOST', 'localhost'),
             'database'  => env('DB_TEST_DATABASE', 'test'),
             'username'  => env('DB_TEST_USERNAME', 'root'),
-            'password'  => env('DB_TEST_PASSWORD', ''),
+            'password'  => env('DB_TEST_PASSWORD', 'secret'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'port'      => env('DB_TEST_PORT', 3306),

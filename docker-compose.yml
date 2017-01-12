@@ -65,7 +65,7 @@ services:
             args:
                 - MYSQL_DATABASE=testing
                 - MYSQL_USER=root
-                - MYSQL_PASSWORD=
+                - MYSQL_PASSWORD=secret
                 - MYSQL_ROOT_PASSWORD=root
                 - MYSQL_HOST=localhost
         volumes:
