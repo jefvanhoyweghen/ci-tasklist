@@ -13,7 +13,7 @@ services:
         volumes_from:
             - applications
         extra_hosts:
-            - "dockerhost:138.68.90.224"
+            - "dockerhost:DOCKER_IP"
         ports:
            - "2222:22"
         tty: true
@@ -39,7 +39,7 @@ services:
         links:
             - workspace
         extra_hosts:
-            - "dockerhost:138.68.90.224"
+            - "dockerhost:DOCKER_IP"
         environment:
             # IMPORTANT: Set the Remote Interpreter entry matching name to `laravel`
             - PHP_IDE_CONFIG=serverName=laravel
