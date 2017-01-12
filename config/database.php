@@ -81,7 +81,7 @@ return [
         'jenkins' => [
             'driver'    => 'mysql',
             'host'      => env('DB_TEST_HOST', 'localhost'),
-            'database'  => env('DB_TEST_DATABASE', 'test'),
+            'database'  => env('DB_TEST_DATABASE', 'testing'),
             'username'  => env('DB_TEST_USERNAME', 'root'),
             'password'  => env('DB_TEST_PASSWORD', 'secret'),
             'charset'   => 'utf8',
