@@ -1,10 +1,12 @@
+SIZE=$1
+echo $SIZE
 sudo rm ~/.docker/machine/cache/boot2docker.iso
-if docker-machine ls -q | grep '^ci-vm$'
-then docker-machine rm ci-vm -y
+if docker-machine ls -q | grep '^ci-local$'
+then docker-machine rm ci-local -y
 fi
-docker-machine create --driver virtualbox ci-vm
-eval $(docker-machine env ci-vm)
-DOCKER_IP="$(docker-machine ip ci-vm)"
+docker-machine create --driver digitalocean --digitalocean-access-token 1abb45fa73e481eeb2810c09645d4aa24887ae56ea8097f314445131f84ae34e --digitalocean-region fra1 --digitalocean-size $SIZE ci-local
+eval $(docker-machine env ci-local)
+DOCKER_IP="$(docker-machine ip ci-local)"
 sed -i "s/DOCKER_IP/$DOCKER_IP/g" docker-compose.yml
 sudo docker-compose rm -f
 sudo docker-compse pull
