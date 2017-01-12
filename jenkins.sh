@@ -7,4 +7,5 @@ composer self-update
 composer install --no-interaction
 php artisan key:generate
 php artisan migrate --seed
+cat .env
 vendor/bin/phpunit
