@@ -1,6 +1,5 @@
-pwd
-echo $JOB_NAME
-cd $JOB_NAME
+FOLDER=$1
+cd $FOLDER
 rm .env
 cp /.env.jenkins /.env
 cp phpunit.xml.jenkins phpunit.xml
