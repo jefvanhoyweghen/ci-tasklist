@@ -1,3 +1,4 @@
+#!/bin/bash
 docker-machine status ci-vm 2> /dev/null || docker-machine create --driver virtualbox ci-vm
 eval $(docker-machine env ci-vm)
 DOCKER_IP="$(docker-machine ip ci-vm)"

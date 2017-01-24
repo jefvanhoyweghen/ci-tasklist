@@ -1,3 +1,4 @@
+#!/bin/bash
 SIZE=$1
 echo $SIZE
 sudo rm ~/.docker/machine/cache/boot2docker.iso

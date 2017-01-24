@@ -1,3 +1,4 @@
+#!/bin/bash
 cp .env.local .env
 cp phpunit.xml.local phpunit.xml
 mysql -e 'drop database test;'

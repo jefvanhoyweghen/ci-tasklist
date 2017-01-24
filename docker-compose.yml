@@ -41,7 +41,6 @@ services:
         extra_hosts:
             - "dockerhost:DOCKER_IP"
         environment:
-            # IMPORTANT: Set the Remote Interpreter entry matching name to `laravel`
             - PHP_IDE_CONFIG=serverName=laravel
 
     apache2:

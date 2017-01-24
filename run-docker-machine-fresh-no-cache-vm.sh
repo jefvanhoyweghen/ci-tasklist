@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo rm ~/.docker/machine/cache/boot2docker.iso
 if docker-machine ls -q | grep '^ci-vm$'
 then docker-machine rm ci-vm -y
